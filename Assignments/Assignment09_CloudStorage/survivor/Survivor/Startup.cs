@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Survivor.Services;
-using WebProgramming;
+using Microsoft.Extensions.Hosting;
 
 namespace Survivor
 {
@@ -20,39 +18,31 @@ namespace Survivor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddSingleton<IUserNameProvider, UserNameProvider>();
-            services.AddSingleton<ICloudStorageAccountProvider, CloudStorageAccountProvider>();
-            services.AddSingleton<ImageTableStorage>();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseCors(policy => policy
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod());
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseDefaultFiles();
 
             app.UseStaticFiles();
 
-            if (env.IsDevelopment())
-            {
-                app.UseExceptionHandler(ErrorHandler.HandleError);
-            }
-            else
-            {
-                app.UseHsts();
-            }
-
             app.UseHttpsRedirection();
-            app.UseMvc();
 
-            var imageTableStorage = app.ApplicationServices.GetRequiredService<ImageTableStorage>();
-            imageTableStorage.StartupAsync().Wait();
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
