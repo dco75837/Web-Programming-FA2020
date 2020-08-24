@@ -1,7 +1,7 @@
 # Web-Programming-FA2019
 All of the assignments and lecture code for Web Programming Fall 2019 at Bethel University
 
-[Web Programming Lecture Videos](https://www.youtube.com/playlist?list=PLar83IIzEy4rpV6JEWNJoOWUe1VUWdq2E)
+[Web Programming Lecture Videos](https://www.youtube.com/playlist?list=PLar83IIzEy4pMcDgfWozhU3AK_3__Y8Jp)
 
 [Web Programming Assignments](https://www.youtube.com/playlist?list=PLar83IIzEy4rg4MQHcKCiRVezWP5DKjKd)
 
