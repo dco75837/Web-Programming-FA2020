@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WebProgramming;
+using Microsoft.Extensions.Hosting;
 
 namespace DependencyInjection
 {
@@ -19,31 +18,29 @@ namespace DependencyInjection
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-			app.UseCors(policy => policy
-			   .AllowAnyOrigin()
-			   .AllowAnyMethod()
-			   .AllowAnyHeader()
-			   .WithExposedHeaders(new string[] { "request-id", "stopwatch" }));
-
-			app.UseStaticFiles();
-
-			if (env.IsDevelopment())
+            if (env.IsDevelopment())
             {
-                app.UseExceptionHandler(ErrorHandler.HandleError);
+                app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseHsts();
-            }
+
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
