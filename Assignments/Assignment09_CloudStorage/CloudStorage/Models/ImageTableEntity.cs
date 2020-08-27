@@ -1,17 +1,21 @@
-﻿using Microsoft.Azure.Cosmos.Table;
-using Survivor.Entities;
+﻿using CloudStorage.Entities;
+using Microsoft.Azure.Cosmos.Table;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Survivor.Models
+namespace CloudStorage.Models
 {
-    public class ImageModel : TableEntity
+    public class ImageTableEntity : TableEntity
     {
-        public ImageModel(string userName, string name)
+        public ImageTableEntity(string userName, string name)
         {
             this.UserName = userName;
             this.Name = name;
         }
 
-        public ImageModel()
+        public ImageTableEntity()
         {
 
         }
@@ -35,6 +39,7 @@ namespace Survivor.Models
         {
             return new ImageEntity()
             {
+                UserName = this.UserName,
                 Id = this.Id,
                 Name = this.Name
             };
