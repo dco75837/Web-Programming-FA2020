@@ -1,0 +1,15 @@
+body { font-size: 3em; color: red; background-color: orange; }
+
+li { background-color: yellow; }
+
+span { text-decoration: underline; }
+
+#firstspan { font-size: 2em; }
+
+.sad { color: lightblue; background-color: black; }
+
+.bigger { font-size: 2em; }
+
+.absolute { position: absolute; top: 20%; left: 20%; background-color: black; color: green; }
+
+.fixed { position: fixed; background-color: white; color: purple; bottom: 30%; right: 30%;}
