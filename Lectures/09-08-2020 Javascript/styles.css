@@ -12,5 +12,6 @@ span { text-decoration: underline; }
 
 .absolute { position: absolute; top: 20%; left: 20%; background-color: black; color: green; }
 
-.fixed { position: fixed; background-color: white; color: purple; bottom: 30%; right: 30%;}
+.fixed { position: fixed; transition: bottom 5s, right 5s; background-color: white; color: purple; bottom: 30%; right: 30%;}
 
+.fixedMove { bottom: 60%; right: 60%; }
