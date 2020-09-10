@@ -4,13 +4,20 @@
 
 	<title>Javascript and JSON</title>
 
-	<link rel="stylesheet" type = "text/css" href = "styles.css"></link>
+	<link rel = "stylesheet" type = "text/css" href = "styles.css"></link>
 	<script src = "index.js"></script>
 </head>
 
 <body>
-
+	<div id = "results"></div>
 	
+	<div id = "error"></div>
+
+	<form>
+		<textarea rows = "10" cols = "70" id = "userInput">{"userArray": ["one", 234, {"key": "value"}]}</textarea>
+		
+		<input type = "button" value = "Parse!" id = "parseButton"></input>
+	</form>
 	
 	
 
