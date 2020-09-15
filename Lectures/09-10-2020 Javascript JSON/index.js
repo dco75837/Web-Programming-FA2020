@@ -4,7 +4,7 @@
 //
 
 function parse() {
-	var savePreferences = document.getElementById("userInput").value;
+	var userInput = document.getElementById("userInput").value;
 	var results = document.getElementById("results");
 	
 	// clear out the previous parse
