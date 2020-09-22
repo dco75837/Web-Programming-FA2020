@@ -1,0 +1,30 @@
+
+
+	GET 	https://myawesomeserver.com/students - list of students
+	
+	GET 	https://myawesomeserver.com/students/4 - read the data of the fourth student
+	
+	GET 	https://myawesomeserver.com/students/4/addresses - list of adresses of the fourth student
+	
+	GET 	https://myawesomeserver.com/students/4/addresses/2 - the second address of the fourth student
+	
+	POST	https://myawesomeserver.com/students - create a new student
+	
+	POST	https://myawesomeserver.com/students/10/addresses - create an address for the 10th student
+	
+	DELETE	https://myawesomeserver.com/students/1/addresses/1 - deletes the first address from the first student
+	
+	PUT		https://myawesomeserver.com/students/2 - replace the second student in the list
+	
+	PATCH	https://myawesomeserver.com/students/4 - update the fourth student in the list
+	
+	
+	Filtering
+	
+	GET 	https://myawesomeserver.com/students?firstname=steven - list of students with a first name of steven
+	
+	GET 	https://myawesomeserver.com/students/3/address?streetname=greenhaven - list of address of the third student with a street name of greenhaven
+	
+	GET 	https://myawesomeserver.com/students?firstname=steven&lastname=yackel - list of students with a first name of steven, last name of yackel
+	
+	
