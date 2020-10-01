@@ -46,6 +46,7 @@ namespace Spells
 
             app.UseAuthorization();
 
+            // this section will need to be changed if you are doing one of the stretch levels
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

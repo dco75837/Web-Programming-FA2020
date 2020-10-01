@@ -1,5 +1,6 @@
 using Students.Models;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Students.Entities
 {
