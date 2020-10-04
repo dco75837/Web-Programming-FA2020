@@ -14,7 +14,7 @@ namespace Students.Controllers
     {
         // This breaks a rule that will show up after assignment six.
         // We don't like the "new" keyword here.
-        public static List<Student> Students { get; set; } = new List<Student>();
+        private static List<Student> Students { get; set; } = new List<Student>();
 
         [HttpGet]
         public IEnumerable<Student> Get()
