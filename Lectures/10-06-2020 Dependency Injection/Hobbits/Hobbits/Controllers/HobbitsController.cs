@@ -13,6 +13,7 @@ namespace Hobbits.Controllers
     public class HobbitsController : ControllerBase
     {
 
+        private readonly static HobbitsDatabase hobbitsDatabase = new HobbitsDatabase();
 
         public HobbitsController()
         {
