@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hobbits.Entities;
 using Hobbits.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -21,9 +22,9 @@ namespace Hobbits.Controllers
         }
 
         [HttpGet]
-        public string Get()
+        public IEnumerable<HobbitEntity> Get()
         {
-            return "hobbit";
+            return hobbitsDatabase.GetAll().Select(hobbit => new HobbitEntity(hobbit));
         }
     }
 }

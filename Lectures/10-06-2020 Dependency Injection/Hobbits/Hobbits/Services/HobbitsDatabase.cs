@@ -10,7 +10,13 @@ namespace Hobbits.Services
     public class HobbitsDatabase
     {
 
-        private readonly List<HobbitModel> hobbits = new List<HobbitModel>();
+        private readonly List<HobbitModel> hobbits = new List<HobbitModel>()
+        {
+            new HobbitModel() {Name = "Frodo"},
+            new HobbitModel() {Name = "Sam"},
+            new HobbitModel() {Name = "Merry"},
+            new HobbitModel() {Name = "Pippin"}
+        };
 
 
         public IEnumerable<HobbitModel> GetAll()
